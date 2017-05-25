@@ -28,7 +28,7 @@
                     </div>
                     <div class="form-group">
                       <label for="firstname">Password</label>
-                      <input type="password" class="form-control" name="password" id="password"  value="{{$user->password}}" required>
+                      <input type="password" class="form-control" name="password" id="password"  value="">
                     </div>
                     <div class="form-group">
                       <label for="company">Company</label>

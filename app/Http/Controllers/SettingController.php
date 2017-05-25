@@ -49,6 +49,6 @@ class SettingController extends Controller
           $setting->active = $active;
           $setting->save();
       }
-      return redirect('origin/setting');
+      return redirect('origin');
   }
 }

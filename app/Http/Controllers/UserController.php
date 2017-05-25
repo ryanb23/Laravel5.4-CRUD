@@ -147,7 +147,6 @@ class UserController extends Controller
             [
                 'firstname'            => 'required',
                 'lastname'             => 'required',
-                'password'                  => 'required',
                 'company_id'                  => 'required',
                 'department_id'                  => 'required',
                 'group_id'                  => 'required',
@@ -160,9 +159,14 @@ class UserController extends Controller
                   $request, $validator
               );
           } else {
-              $input = Input::only('name', 'firstname', 'lastname', 'email', 'password','company_id', 'department_id', 'group_id', 'role_id');
+              $input = Input::only('name', 'firstname', 'lastname', 'email','company_id', 'department_id', 'group_id', 'role_id');
+
               $user = User::find($id);
               $user->fill($input);
+              $password = $request->input('password');
+              if($password != '')
+                $user->password = bcrypt($password);
+
               $user->save();
           }
 

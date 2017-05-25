@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">User List</div>
 
@@ -15,6 +15,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Company</th>
                         <th>Department</th>
                         <th>Group</th>
                         <th>Role</th>
@@ -28,6 +29,7 @@
                         <th>{{$user->firstname}}</th>
                         <th>{{$user->lastname}}</th>
                         <th>{{$user->email}}</th>
+                        <th>{{$user->company->name}}</th>
                         <th>{{$user->department->name}}</th>
                         <th>{{$user->group->name}}</th>
                         <th>{{$user->role->name}}</th>
